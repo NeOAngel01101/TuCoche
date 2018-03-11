@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\HttpException;
 use App\Conversation;
 use App\PrivateMessage;
-
+use Illuminate\Support\Facades\Storage;
 
 
 class UsersController extends Controller
@@ -119,6 +119,20 @@ class UsersController extends Controller
             }
             $this->user->password = bcrypt($request->get('password'));
         }
+        if (strpos($path, 'avatar')) {
+            if ($avatar = $request->file('avatar')) {
+                $routeParts = explode('/', $this->user->avatar);
+                Storage::disk('public')->delete('image/' . end($routeParts));
+                $url = $avatar->store('image', 'public');
+            } else {
+                $url = $this->user->avatar;
+            }
+            $this->user->fill([
+                'avatar' => $url,
+            ]);
+        }
+
+
         $user->save();
         return redirect()
             ->route('profile.account')

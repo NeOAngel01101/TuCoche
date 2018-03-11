@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile/password', 'UsersController@edit')->name('profile.password');
     Route::patch('/profile/password', 'UsersController@update');
     Route::get('/profile/avatar', 'UsersController@edit')->name('profile.avatar');
+    Route::patch('/profile/avatar', 'UsersController@update');
+
 
     Route::get('/conversations/{conversation}', 'UsersController@showConversation')->name('conversation.show');
     Route::post('/{user}/dms', 'UsersController@sendPrivateMessage');

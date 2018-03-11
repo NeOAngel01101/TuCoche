@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -48,6 +49,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if( ! $exception instanceof HttpException && ! config('app.debug') ){
+            $exception = new HttpException(500, $exception->getMessage(), $exception);
+        }
+        if (!$this->isHttpException($exception)) $exception = new \Symfony\Component\HttpKernel\Exception\HttpException(500);
         return parent::render($request, $exception);
     }
 }

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -46,5 +46,11 @@ class User extends Authenticatable
         return Auth::user()->id == $this->id;
     }
 
-
+    public function getImageAttribute($image)
+    {
+        if( starts_with($image, "https://")){
+            return $image;
+        }
+        return  Storage::disk('public')->url($image);
+    }
 }
