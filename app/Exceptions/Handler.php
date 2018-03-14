@@ -52,7 +52,7 @@ class Handler extends ExceptionHandler
         if( ! $exception instanceof HttpException && ! config('app.debug') ){
             $exception = new HttpException(500, $exception->getMessage(), $exception);
         }
-        if (!$this->isHttpException($exception)) $exception = new \Symfony\Component\HttpKernel\Exception\HttpException(500);
+        //if (!$this->isHttpException($exception)) $exception = new \Symfony\Component\HttpKernel\Exception\HttpException(500);
         return parent::render($request, $exception);
     }
 }

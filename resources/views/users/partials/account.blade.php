@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
+    <li class="breadcrumb-item active">Modificar Perfil</li>
+</ol>
+
 {{ method_field('PATCH') }}
 <div class="container" >
     <div class="row justify-content-md-center mt-5">

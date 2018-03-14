@@ -13,8 +13,8 @@
             </div>
         @endif
     </div>
-
     <div class="row align-items-start">
+        <div id="draggable" class="ui-widget-content">
         <div class="btn-group-vertical" id="botones">
             <a class="btn btn-secondary" href="{{ url('/profile') }}">Ir al Perfil</a>
 
@@ -32,6 +32,7 @@
             </td>
             <a class="btn btn-secondary" style="cursor: default;">========================</a>
             <a class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Borrar Perfil</a>
+
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -58,7 +59,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
         <div class="col">
             <form action="{{ Request::url() }}" method="POST">
                 {{ csrf_field() }}
@@ -75,4 +76,7 @@
         </div>
     </div>
     </body>
+    @push('scripts')
+        <script src="{{ asset('js/draggable.js') }}" defer></script>
+    @endpush
 @endsection

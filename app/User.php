@@ -36,16 +36,6 @@ class User extends Authenticatable
         return $this->hasOne(User::class);
     }
 
-    public function isMe(User $user)
-    {
-        return $this->slug == $user->slug;
-    }
-
-    public function amI()
-    {
-        return Auth::user()->id == $this->id;
-    }
-
     public function getImageAttribute($image)
     {
         if( starts_with($image, "https://")){

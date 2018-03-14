@@ -15,6 +15,8 @@
     <link href="{{ asset('css/cochessegundamano.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/flouthoc/blinkTitle.js/master/index.js"></script>
+
 
 </head>
 <body class="bg-light">
@@ -44,6 +46,7 @@
                     <li class="nav-item active"><a href="{{ url('/') }}/coches/create" class="nav-link">Vender Coche</a></li>
                     @if( Auth::check())
                     <li class="nav-item active"><a href="{{ url('/') }}/administrar" class="nav-link">Administrar Coches</a></li>
+
                     @endif
 
                 </ul>

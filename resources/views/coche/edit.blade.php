@@ -53,7 +53,7 @@
 
                             <div class="col-sm-3{{ $errors->has('year') ? ' has-error' : '' }}">
                                 <label for="year" class="center">Año</label>
-                                <input id="year" type="date" class="form-control" name="year" value="{{ $coche->year }}" autofocus>
+                                <input id="datepicker" type="text" class="form-control" name="year" value="{{ $coche->year }}" autofocus>
                                 @if($errors->has('year'))
                                     @foreach($errors->get('year') as $message)
                                         <div class="alert alert-danger" role="alert">
@@ -208,5 +208,7 @@
     </div>
     @push('scripts')
         <script src="{{ asset('js/autocomplete.js') }}"></script>
+        <script src="{{ asset('js/datepicker.js') }}" ></script>
+
     @endpush
 @endsection

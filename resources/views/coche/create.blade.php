@@ -4,7 +4,7 @@
     <div class="container">
             <div class="col-md-10 mx-auto">
                 <div class="card">
-                    <div class="card-header">Añadir Coche para vender</div>
+                    <div class="card-header">Añadir Coche para vender<span class="badge badge-success">Nuevo Coche</span></div>
                     <div class="card-body">
                         <form action="/coches/create" method="post" class="form-horizontal">
                             {{ csrf_field() }}
@@ -52,7 +52,7 @@
 
                                 <div class="col-sm-3{{ $errors->has('year') ? ' has-error' : '' }}">
                                     <label for="year" class="center">Año</label>
-                                        <input id="year" type="date" class="form-control" name="year" value="{{ old('year') }}" autofocus>
+                                        <input id="datepicker" type="text" class="form-control" name="year" value="{{ old('year') }}" autofocus>
                                         @if($errors->has('year'))
                                             @foreach($errors->get('year') as $message)
                                                 <div class="alert alert-danger" role="alert">
@@ -207,5 +207,6 @@
     </div>
     @push('scripts')
         <script src="{{ asset('js/autocomplete.js') }}" ></script>
+        <script src="{{ asset('js/datepicker.js') }}" ></script>
     @endpush
 @endsection

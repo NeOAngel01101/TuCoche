@@ -1,9 +1,5 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/vista3.js": "/js/vista3.js",
-    "/js/vista2.js": "/js/vista2.js",
-    "/js/vista.js": "/js/vista.js",
-    "/js/ValidacionUser.js": "/js/ValidacionUser.js",
-    "/js/ValidacionCoche.js": "/js/ValidacionCoche.js"
+    "/js/script.js": "/js/script.js"
 }

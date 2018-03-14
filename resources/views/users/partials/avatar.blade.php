@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
+    <li class="breadcrumb-item active">Cambiar Avatar</li>
+</ol>
+
 {{ method_field('PATCH') }}
 <div class="container">
     <div class="row justify-content-md-center mt-5">
@@ -29,3 +34,9 @@
         </div>
     </div>
 </div>
+<div id="dialog" title="Es necesario">
+    <p>Recuenda que las imagenes subidas tienen que ser en formado png y no ser mayores de 2mb</p>
+</div>
+@push('scripts')
+    <script src="{{ asset('js/dialog.js') }}" defer></script>
+@endpush
