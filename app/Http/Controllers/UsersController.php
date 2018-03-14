@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserAjaxRequest;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateUserRequest;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Testing\HttpException;
 use App\Conversation;
 use App\PrivateMessage;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller
 {
@@ -24,6 +25,12 @@ class UsersController extends Controller
             return $next($request);
         });
         $this->user = auth()->user();
+    }
+
+
+    protected function validacionAjaxUser(CreateUserAjaxRequest $request)
+    {
+        return array();
     }
 
     /**

@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Registro de Usuario</div>
                     <div class="card-body">
-                        <form role="form" method="post" action="{{ url('/register') }}">
+                        <form role="form" method="POST" action="{{ url('/register') }}" id="userform">
                             {!! csrf_field() !!}
 
                             <div class="form-group row{{ $errors->has('tipo') ? ' has-error' : '' }}">
@@ -26,6 +26,7 @@
                                         @endforeach
                                     @endif
                                 </div>
+                                @include('layouts.spinner')
                             </div>
 
                             <div class="form-group row{{ $errors->has('username') ? ' has-error' : '' }}">
@@ -38,6 +39,7 @@
                                         </div>
                                     @endif
                                 </div>
+                                @include('layouts.spinner')
                             </div>
 
                             <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -50,6 +52,7 @@
                                         </div>
                                     @endif
                                 </div>
+                                @include('layouts.spinner')
                             </div>
 
                             <div class="form-group row{{ $errors->has('apellido') ? ' has-error' : '' }}">
@@ -62,6 +65,7 @@
                                         </div>
                                     @endif
                                 </div>
+                                @include('layouts.spinner')
                             </div>
 
                             <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -74,6 +78,7 @@
                                         </div>
                                     @endif
                                 </div>
+                                @include('layouts.spinner')
                             </div>
 
                             <div class="form-group row{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -86,6 +91,7 @@
                                         </div>
                                     @endif
                                 </div>
+                                @include('layouts.spinner')
                             </div>
 
                             <div class="form-group row">
@@ -107,7 +113,7 @@
 
                             <div class="form-group row">
                                 <div class="col-lg-6 offset-lg-4">
-                                    <button type="submit"  class="btn btn-primary">
+                                    <button type="submit"  class="btn btn-primary" id="registrouser">
                                         Registrarse
                                     </button>
                                 </div>
@@ -119,5 +125,7 @@
         </div>
     </div>
 
-
+    @push('scripts')
+        <script src="{{asset ('js/ValidacionUser.js')}}"></script>
+    @endpush
 @endsection
