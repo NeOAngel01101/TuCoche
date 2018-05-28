@@ -22,6 +22,6 @@ Cuando lo hayamos configurado correctamente ,tendremos que renombrar el **.env.e
 ## Configuracion del proyecto para que sea funcional 
 Una vez ya configurado todo lo anterior,en la consola de comandos de nuestro proyecto pondremos :
 ```
-composer install\par
+composer install
 ```
 Ya que lo necesitaremos para que nuestro proyecto este totalmente actualizado.
