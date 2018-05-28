@@ -1,4 +1,5 @@
-## Configuracion del archivo de homestead.yarl \par
+## Configuracion del archivo de homestead.yarl 
+
 (Tiene que estar el host de system32/drivers/etc/ totalmente modificado con la ruta base de nuestro proyecto y la ip)
 Encontraremos este archivo en la carpeta de homestead,el cual tendremos que modificar a\'f1adiendo la ruta de nuestro proyecto
 con su direccion y la database que deseamos crear para despues ser usada. 
